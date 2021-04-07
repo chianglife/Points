@@ -43,6 +43,8 @@
 
 @property (nonatomic, assign) NSInteger ticketSurplusCount;
 @property (nonatomic, strong) NSLock *lock;
+@property (nonatomic, strong) NSMutableArray *testArray;
+
 
 @end
 
@@ -53,7 +55,7 @@
     dict = [NSMutableDictionary dictionary];
     concurrent_queue = dispatch_queue_create("concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
 //    [self deadlock];
-    [self test9];
+    [self test10];
 
 }
 
@@ -360,6 +362,61 @@
     //4.自定义，任务封装在main函数中
     MyTestThread *mythread = [[MyTestThread alloc] init];
     [mythread start];
+}
+
+#pragma mark - 锁
+//当普通线程安全,使用NSLock,效率高
+//当递归调用时,使用NSRecursiveLock递归锁来保证线程安全
+//当使用递归调用,还有循环的外界线程影响时,就要注意死锁的产生，用@synchronized
+- (void)test10 {
+    // 如果不加锁，sidetable_release 报错
+    // 因为旧值release时,会存在多个同时release的情况
+    NSLock *lock = [[NSLock alloc] init];
+    for (int i = 0; i < 20; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            // @synchronize当加锁对象为nil时,不做任何处理,我们对_testArray加锁时,这里_testArray是会为nil的,导致加锁失败,使用self时,self一定不为nil
+            //            @synchronized (self) {
+            //                self.testArray = [NSMutableArray array];
+            //            }
+            //NSLock效率更高
+            [lock lock];
+            self.testArray = [NSMutableArray array];
+            [lock unlock];
+        });
+    }
+    
+    //递归锁
+    NSRecursiveLock *recursiveLock = [[NSRecursiveLock alloc] init];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        static void (^testBlock)(int);
+        testBlock = ^(int value) {
+            //如果使用NSLock,只会打印100，发生阻塞，用递归锁来解决阻塞问题
+            [recursiveLock lock];
+            if (value > 0) {
+                NSLog(@"value = %d", value);
+                testBlock(value - 1);
+            }
+            [recursiveLock unlock];
+        };
+        testBlock(10);
+    });
+    
+    //for循环异步递归调用,这时会有很多线程在相互等待操作,如果用NSRecursiveLock还是会发生死锁
+    //@synchronized(self)加锁时,是从缓存中去取的,不会重复的去创建,能防止死锁的发生
+    for (int i = 0; i < 10; i++) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            static void (^testBlock)(int);
+            testBlock = ^(int value) {
+                @synchronized (self) {
+                    if (value > 0) {
+                        NSLog(@"value = %d", value);
+                        testBlock(value - 1);
+                    }
+                }
+            };
+            testBlock(10);
+        });
+    }
 }
 
 @end
