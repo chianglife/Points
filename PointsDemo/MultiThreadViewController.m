@@ -20,6 +20,22 @@
 
 @end
 
+@implementation MyTestThread
+//可以通过重写 main 或者 start 方法
+- (void)main {
+    if (!self.isCancelled) {
+        NSLog(@"my thread");
+    }
+    //线程间通信
+    [self performSelector:@selector(otherTask) onThread:[NSThread mainThread] withObject:nil waitUntilDone:YES];
+}
+
+- (void)otherTask {
+    NSLog(@"other task");
+}
+
+@end
+
 @interface MultiThreadViewController () {
     NSMutableDictionary *dict;
     dispatch_queue_t concurrent_queue;
@@ -37,7 +53,7 @@
     dict = [NSMutableDictionary dictionary];
     concurrent_queue = dispatch_queue_create("concurrent_queue", DISPATCH_QUEUE_CONCURRENT);
 //    [self deadlock];
-    [self test8];
+    [self test9];
 
 }
 
@@ -327,5 +343,24 @@
         }
     }
 }
+
+#pragma mark - NSThread
+
+- (void)test9 {
+    //1.initWithTarget，手动启动
+    NSThread *thread = [[NSThread alloc] initWithTarget:self selector:@selector(task1) object:nil];
+    [thread start];
+    
+    //2.分离出新线程，自启动
+    [NSThread detachNewThreadSelector:@selector(task1) toTarget:self withObject:nil];
+    
+    //3.后台线程
+    [self performSelectorInBackground:@selector(task1) withObject:nil];
+    
+    //4.自定义，任务封装在main函数中
+    MyTestThread *mythread = [[MyTestThread alloc] init];
+    [mythread start];
+}
+
 @end
 

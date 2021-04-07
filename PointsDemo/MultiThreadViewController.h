@@ -11,6 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MyTestOperation : NSOperation
 @end
 
+@interface MyTestThread : NSThread
+@end
+
 @interface MultiThreadViewController : UIViewController
 
 @end
