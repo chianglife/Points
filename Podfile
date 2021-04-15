@@ -6,5 +6,6 @@ inhibit_all_warnings!
 
 target 'PointsDemo' do
     pod 'Masonry'
+    pod 'YYKit'
 end
 	

@@ -19,6 +19,9 @@
 		1E763F612564BBD40081DF11 /* PointsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F602564BBD40081DF11 /* PointsDemoTests.m */; };
 		1E763F6C2564BBD40081DF11 /* PointsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F6B2564BBD40081DF11 /* PointsDemoUITests.m */; };
 		1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */; };
+		1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */; };
+		1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED429652627DAC100B0D686 /* LXQTableViewCell.m */; };
+		1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */; };
 		7F5A071C8DCCBAF6E8F007FB /* libPods-PointsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A67D26F7EF8D37857937E1 /* libPods-PointsDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,12 @@
 		1E763F672564BBD40081DF11 /* PointsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E763F6B2564BBD40081DF11 /* PointsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PointsDemoUITests.m; sourceTree = "<group>"; };
 		1E763F6D2564BBD40081DF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ED4295B2627DA7200B0D686 /* LXQTableViewAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewAutoViewController.h; sourceTree = "<group>"; };
+		1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQTableViewAutoViewController.m; sourceTree = "<group>"; };
+		1ED429642627DAC100B0D686 /* LXQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewCell.h; sourceTree = "<group>"; };
+		1ED429652627DAC100B0D686 /* LXQTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQTableViewCell.m; sourceTree = "<group>"; };
+		1ED4296A2627DAFB00B0D686 /* LXQLIstModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQLIstModel.h; sourceTree = "<group>"; };
+		1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQLIstModel.m; sourceTree = "<group>"; };
 		1EFE5825256E42A500B2E4B2 /* ClassLoadOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassLoadOrder.h; sourceTree = "<group>"; };
 		1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassLoadOrder.m; sourceTree = "<group>"; };
 		848646FAE6DAE5533B4E6336 /* Pods-PointsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointsDemo.debug.xcconfig"; path = "Target Support Files/Pods-PointsDemo/Pods-PointsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 				1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */,
 				1E2EB10C25AAF2300035AA0B /* AliveThread.h */,
 				1E2EB10D25AAF2300035AA0B /* AliveThread.m */,
+				1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */,
 				1E763F502564BBD40081DF11 /* Assets.xcassets */,
 				1E763F522564BBD40081DF11 /* LaunchScreen.storyboard */,
 				1E763F552564BBD40081DF11 /* Info.plist */,
@@ -159,6 +169,19 @@
 				1E763F6D2564BBD40081DF11 /* Info.plist */,
 			);
 			path = PointsDemoUITests;
+			sourceTree = "<group>";
+		};
+		1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */ = {
+			isa = PBXGroup;
+			children = (
+				1ED4295B2627DA7200B0D686 /* LXQTableViewAutoViewController.h */,
+				1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */,
+				1ED429642627DAC100B0D686 /* LXQTableViewCell.h */,
+				1ED429652627DAC100B0D686 /* LXQTableViewCell.m */,
+				1ED4296A2627DAFB00B0D686 /* LXQLIstModel.h */,
+				1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */,
+			);
+			path = TableViewAutoHeight;
 			sourceTree = "<group>";
 		};
 		31A724B04D25675C18B21416 /* Frameworks */ = {
@@ -335,10 +358,13 @@
 				1E1C96D62616FD6C005FBD42 /* MultiThreadViewController.m in Sources */,
 				1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */,
 				1E763F4C2564BBD10081DF11 /* ViewController.m in Sources */,
+				1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */,
 				1E763F462564BBD10081DF11 /* AppDelegate.m in Sources */,
 				1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */,
+				1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */,
 				1E2EB10E25AAF2300035AA0B /* AliveThread.m in Sources */,
 				1E763F572564BBD40081DF11 /* main.m in Sources */,
+				1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */,
 				1E763F492564BBD10081DF11 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ResponseChainViewController.h"
 #import "MultiThreadViewController.h"
+#import "LXQTableViewAutoViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -19,7 +20,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    Class class = NSClassFromString(@"MultiThreadViewController");
+    Class class = NSClassFromString(@"LXQTableViewAutoViewController");
     id vc = [[class alloc] init];
     UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController =navCtr;
