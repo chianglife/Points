@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E1821332629D2FD009517FC /* MemoryIssuesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */; };
 		1E1C96D62616FD6C005FBD42 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1C96D52616FD6C005FBD42 /* MultiThreadViewController.m */; };
 		1E2EB10E25AAF2300035AA0B /* AliveThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EB10D25AAF2300035AA0B /* AliveThread.m */; };
 		1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E43F780260449EE00B86FFE /* ResponseChainViewController.m */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E1821312629D2FD009517FC /* MemoryIssuesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryIssuesViewController.h; sourceTree = "<group>"; };
+		1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryIssuesViewController.m; sourceTree = "<group>"; };
 		1E1C96D42616FD6C005FBD42 /* MultiThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadViewController.h; sourceTree = "<group>"; };
 		1E1C96D52616FD6C005FBD42 /* MultiThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadViewController.m; sourceTree = "<group>"; };
 		1E2EB10C25AAF2300035AA0B /* AliveThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AliveThread.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */,
 				1E2EB10C25AAF2300035AA0B /* AliveThread.h */,
 				1E2EB10D25AAF2300035AA0B /* AliveThread.m */,
+				1E1821312629D2FD009517FC /* MemoryIssuesViewController.h */,
+				1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */,
 				1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */,
 				1E763F502564BBD40081DF11 /* Assets.xcassets */,
 				1E763F522564BBD40081DF11 /* LaunchScreen.storyboard */,
@@ -362,6 +367,7 @@
 				1E763F462564BBD10081DF11 /* AppDelegate.m in Sources */,
 				1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */,
 				1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */,
+				1E1821332629D2FD009517FC /* MemoryIssuesViewController.m in Sources */,
 				1E2EB10E25AAF2300035AA0B /* AliveThread.m in Sources */,
 				1E763F572564BBD40081DF11 /* main.m in Sources */,
 				1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */,
