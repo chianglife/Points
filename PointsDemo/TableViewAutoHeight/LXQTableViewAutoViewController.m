@@ -58,6 +58,11 @@
     return _dataArray.count;
 }
 
+//最好通过代理的方式来设置预估行高，通过属性设置有可能会存在失效的情况
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     LXQLIstModel * model = _dataArray[indexPath.row];
     return model.cell_height?:UITableViewAutomaticDimension;
