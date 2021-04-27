@@ -9,13 +9,24 @@
 
 @interface MemoryIssuesViewController ()
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation MemoryIssuesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self testTagedPointer];
+    //    [self testTagedPointer];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"启动定时器" style:UIBarButtonItemStylePlain target:self action:@selector(begin)];
+    
+    //NStimer引起的循环应用问题
+    if (self.navigationController.childViewControllers.count > 1) {
+        self.navigationItem.rightBarButtonItem = nil;
+        
+        __weak typeof(self) weakSelf = self;
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:weakSelf selector:@selector(timerAction) userInfo:nil repeats:YES];
+    }
 }
 
 - (void)testTagedPointer {
@@ -39,5 +50,19 @@
     }
 }
 
+
+- (void)begin {
+    MemoryIssuesViewController *vc = [[MemoryIssuesViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)timerAction {
+    NSLog(@"tiktok");
+}
+
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+}
 
 @end
