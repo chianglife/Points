@@ -11,6 +11,7 @@
 #import "MultiThreadViewController.h"
 #import "LXQTableViewAutoViewController.h"
 #import "MemoryIssuesViewController.h"
+#import "MethodSwizzlingViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -21,6 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    //需要测试哪个就填哪个VC
     Class class = NSClassFromString(@"MethodSwizzlingViewController");
     id vc = [[class alloc] init];
     UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:vc];
