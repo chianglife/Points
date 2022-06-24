@@ -35,31 +35,8 @@
 //    }];
     
 //    [self test_NSMapTable];
-    
-//    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 50)];
-//    [button setTitle:@"点击打开合管家联盟版" forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [button setBackgroundColor:[UIColor blueColor]];
-//    [button addTarget:self action:@selector(clicked) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-//
-//    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(200, 50));
-//        make.centerX.equalTo(self.view.mas_centerX);
-//        make.centerY.equalTo(self.view.mas_centerY);
-//    }];
 //    [self creatAndStartThread];
 }
-
-//- (void)clicked {
-//    if (@available(iOS 10.0, *)) {
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"hilifebk://"]
-//                                           options:@{}
-//                                 completionHandler:nil];
-//    } else {
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"hilifebk://"]];
-//    }
-//}
 
 
 /*

@@ -19,6 +19,7 @@
 		1E763F572564BBD40081DF11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F562564BBD40081DF11 /* main.m */; };
 		1E763F612564BBD40081DF11 /* PointsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F602564BBD40081DF11 /* PointsDemoTests.m */; };
 		1E763F6C2564BBD40081DF11 /* PointsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F6B2564BBD40081DF11 /* PointsDemoUITests.m */; };
+		1E825CA4286569F200B07D89 /* MethodSwizzlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */; };
 		1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */; };
 		1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */; };
 		1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED429652627DAC100B0D686 /* LXQTableViewCell.m */; };
@@ -69,6 +70,8 @@
 		1E763F672564BBD40081DF11 /* PointsDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PointsDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E763F6B2564BBD40081DF11 /* PointsDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PointsDemoUITests.m; sourceTree = "<group>"; };
 		1E763F6D2564BBD40081DF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E825CA2286569F200B07D89 /* MethodSwizzlingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodSwizzlingViewController.h; sourceTree = "<group>"; };
+		1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingViewController.m; sourceTree = "<group>"; };
 		1ED4295B2627DA7200B0D686 /* LXQTableViewAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewAutoViewController.h; sourceTree = "<group>"; };
 		1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQTableViewAutoViewController.m; sourceTree = "<group>"; };
 		1ED429642627DAC100B0D686 /* LXQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewCell.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				1E2EB10D25AAF2300035AA0B /* AliveThread.m */,
 				1E1821312629D2FD009517FC /* MemoryIssuesViewController.h */,
 				1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */,
+				1E825CA2286569F200B07D89 /* MethodSwizzlingViewController.h */,
+				1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */,
 				1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */,
 				1E763F502564BBD40081DF11 /* Assets.xcassets */,
 				1E763F522564BBD40081DF11 /* LaunchScreen.storyboard */,
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E1C96D62616FD6C005FBD42 /* MultiThreadViewController.m in Sources */,
+				1E825CA4286569F200B07D89 /* MethodSwizzlingViewController.m in Sources */,
 				1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */,
 				1E763F4C2564BBD10081DF11 /* ViewController.m in Sources */,
 				1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */,
@@ -537,6 +543,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP923K294H;
 				INFOPLIST_FILE = PointsDemo/Info.plist;
@@ -547,6 +554,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chiang.PointsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -558,8 +566,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DP923K294H;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PointsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -568,6 +576,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Chiang.PointsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
