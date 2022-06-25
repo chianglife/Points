@@ -36,13 +36,14 @@
 - (void)test {
     TestModel *model = [[TestModel alloc] init];
     [model test_setValue:@"chiang" forKey:@"name"];
-    NSLog(@"%@",model.name);
+    NSLog(@"%@",[model test_valueForKey:@"name"]);
 }
 
 @end
 
 @implementation TestModel
 
+//设值
 - (void)test_setValue:(nullable id)value forKey:(NSString *)key{
     if (key == nil || key.length == 0) return;
     
@@ -100,8 +101,67 @@
 
 }
 
+//取值
+- (nullable id)test_valueForKey:(NSString *)key{
+    if (key == nil || key.length == 0) {
+        return nil;
+    }
+    NSString *Key = key.capitalizedString;
+    NSString *getKey = [NSString stringWithFormat:@"get%@",Key];
+    NSString *countOfKey = [NSString stringWithFormat:@"countOf%@",Key];
+    NSString *objectInKeyAtIndex = [NSString stringWithFormat:@"objectIn%@AtIndex:",Key];
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    if ([self respondsToSelector:NSSelectorFromString(getKey)]) {
+        return [self performSelector:NSSelectorFromString(getKey)];
+    } else if ([self respondsToSelector:NSSelectorFromString(key)]){
+        return [self performSelector:NSSelectorFromString(key)];
+    }
+    //集合类型
+    else if ([self respondsToSelector:NSSelectorFromString(countOfKey)]){
+        if ([self respondsToSelector:NSSelectorFromString(objectInKeyAtIndex)]) {
+            int num = (int)[self performSelector:NSSelectorFromString(countOfKey)];
+            NSMutableArray *mArray = [NSMutableArray arrayWithCapacity:1];
+            for (int i = 0; i<num-1; i++) {
+                num = (int)[self performSelector:NSSelectorFromString(countOfKey)];
+            }
+            for (int j = 0; j<num; j++) {
+                id objc = [self performSelector:NSSelectorFromString(objectInKeyAtIndex) withObject:@(num)];
+                [mArray addObject:objc];
+            }
+            return mArray;
+        }
+    }
+#pragma clang diagnostic pop
+    if (![self.class accessInstanceVariablesDirectly]) {
+          @throw [NSException exceptionWithName:@"CJLUnKnownKeyException" reason:[NSString stringWithFormat:@"****[%@ valueForUndefinedKey:]: this class is not key value coding-compliant for the key name.****",self] userInfo:nil];
+      }
+      
+    //找相关实例变量进行赋值，顺序为：_key、_isKey、key、isKey
+      NSMutableArray *mArray = [self getIvarListName];
+      NSString *_key = [NSString stringWithFormat:@"_%@",key];
+      NSString *_isKey = [NSString stringWithFormat:@"_is%@",Key];
+      NSString *isKey = [NSString stringWithFormat:@"is%@",Key];
+      if ([mArray containsObject:_key]) {
+          Ivar ivar = class_getInstanceVariable([self class], _key.UTF8String);
+          return object_getIvar(self, ivar);;
+      }else if ([mArray containsObject:_isKey]) {
+          Ivar ivar = class_getInstanceVariable([self class], _isKey.UTF8String);
+          return object_getIvar(self, ivar);;
+      }else if ([mArray containsObject:key]) {
+          Ivar ivar = class_getInstanceVariable([self class], key.UTF8String);
+          return object_getIvar(self, ivar);;
+      }else if ([mArray containsObject:isKey]) {
+          Ivar ivar = class_getInstanceVariable([self class], isKey.UTF8String);
+          return object_getIvar(self, ivar);;
+      }
+      return @"";
+}
+
+
 + (BOOL)accessInstanceVariablesDirectly {
-    return NO;
+    return YES;
 }
 
 - (NSMutableArray *)getIvarListName {

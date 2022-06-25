@@ -15,8 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TestModel : NSObject
 @property (nonatomic, copy)NSString *name;
-
+//自定义设值
 - (void)test_setValue:(nullable id)value forKey:(NSString *)key;
-
+//自定义取值
+- (nullable id)test_valueForKey:(NSString *)key;
 @end
 NS_ASSUME_NONNULL_END
