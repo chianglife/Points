@@ -11,6 +11,7 @@
 		1E1C96D62616FD6C005FBD42 /* MultiThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1C96D52616FD6C005FBD42 /* MultiThreadViewController.m */; };
 		1E2EB10E25AAF2300035AA0B /* AliveThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2EB10D25AAF2300035AA0B /* AliveThread.m */; };
 		1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E43F780260449EE00B86FFE /* ResponseChainViewController.m */; };
+		1E65A9BB2866A18A00FB3076 /* KVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E65A9BA2866A18A00FB3076 /* KVCViewController.m */; };
 		1E763F462564BBD10081DF11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F452564BBD10081DF11 /* AppDelegate.m */; };
 		1E763F492564BBD10081DF11 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F482564BBD10081DF11 /* SceneDelegate.m */; };
 		1E763F4C2564BBD10081DF11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F4B2564BBD10081DF11 /* ViewController.m */; };
@@ -53,6 +54,8 @@
 		1E2EB10D25AAF2300035AA0B /* AliveThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AliveThread.m; sourceTree = "<group>"; };
 		1E43F77F260449EE00B86FFE /* ResponseChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponseChainViewController.h; sourceTree = "<group>"; };
 		1E43F780260449EE00B86FFE /* ResponseChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponseChainViewController.m; sourceTree = "<group>"; };
+		1E65A9B92866A18A00FB3076 /* KVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVCViewController.h; sourceTree = "<group>"; };
+		1E65A9BA2866A18A00FB3076 /* KVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVCViewController.m; sourceTree = "<group>"; };
 		1E763F412564BBD10081DF11 /* PointsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PointsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E763F442564BBD10081DF11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1E763F452564BBD10081DF11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E65A9B828669EB900FB3076 /* KVC&KVO */ = {
+			isa = PBXGroup;
+			children = (
+				1E65A9B92866A18A00FB3076 /* KVCViewController.h */,
+				1E65A9BA2866A18A00FB3076 /* KVCViewController.m */,
+			);
+			path = "KVC&KVO";
+			sourceTree = "<group>";
+		};
 		1E763F382564BBD10081DF11 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 				1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */,
 				1E825CA2286569F200B07D89 /* MethodSwizzlingViewController.h */,
 				1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */,
+				1E65A9B828669EB900FB3076 /* KVC&KVO */,
 				1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */,
 				1E763F502564BBD40081DF11 /* Assets.xcassets */,
 				1E763F522564BBD40081DF11 /* LaunchScreen.storyboard */,
@@ -374,6 +387,7 @@
 				1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */,
 				1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */,
 				1E1821332629D2FD009517FC /* MemoryIssuesViewController.m in Sources */,
+				1E65A9BB2866A18A00FB3076 /* KVCViewController.m in Sources */,
 				1E2EB10E25AAF2300035AA0B /* AliveThread.m in Sources */,
 				1E763F572564BBD40081DF11 /* main.m in Sources */,
 				1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */,
