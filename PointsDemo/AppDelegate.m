@@ -6,12 +6,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
-#import "ResponseChainViewController.h"
-#import "MultiThreadViewController.h"
-#import "LXQTableViewAutoViewController.h"
-#import "MemoryIssuesViewController.h"
-#import "MethodSwizzlingViewController.h"
 
 @interface AppDelegate ()
 @end
@@ -23,7 +17,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     //需要测试哪个就填哪个VC
-    Class class = NSClassFromString(@"KVCViewController");
+    Class class = NSClassFromString(@"KVOViewController");
     id vc = [[class alloc] init];
     UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController =navCtr;
