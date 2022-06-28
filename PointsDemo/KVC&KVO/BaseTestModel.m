@@ -27,4 +27,17 @@
     }
     return keyPaths;
 }
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray arrayWithCapacity:1];
+    }
+    return _dataArray;
+}
+
+@end
+
+
+@implementation TestModel1
+
 @end

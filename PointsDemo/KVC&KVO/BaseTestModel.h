@@ -9,15 +9,24 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BaseTestModel : NSObject
+@interface BaseTestModel : NSObject {
+    @public NSString *value3;
+}
 
 @property (nonatomic, copy)NSString *name;
 @property (nonatomic, assign)NSInteger count;
+@property (nonatomic, copy)NSString *value;
 @property (nonatomic, copy)NSString *value1;
 @property (nonatomic, copy)NSString *value2;
+@property(nonatomic, strong)NSMutableArray *dataArray;
 
 + (instancetype)sharedInstance;
 
 @end
+
+@interface TestModel1 : BaseTestModel
+
+@end
+
 
 NS_ASSUME_NONNULL_END
