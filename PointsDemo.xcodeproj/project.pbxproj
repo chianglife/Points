@@ -25,6 +25,7 @@
 		1E763F6C2564BBD40081DF11 /* PointsDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E763F6B2564BBD40081DF11 /* PointsDemoUITests.m */; };
 		1E825CA4286569F200B07D89 /* MethodSwizzlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */; };
 		1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */; };
+		1EA4AF3E286FDCE500FD7952 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4AF3D286FDCE500FD7952 /* BlockViewController.m */; };
 		1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */; };
 		1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED429652627DAC100B0D686 /* LXQTableViewCell.m */; };
 		1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */; };
@@ -85,6 +86,8 @@
 		1E763F6D2564BBD40081DF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E825CA2286569F200B07D89 /* MethodSwizzlingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodSwizzlingViewController.h; sourceTree = "<group>"; };
 		1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingViewController.m; sourceTree = "<group>"; };
+		1EA4AF3C286FDCE500FD7952 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
+		1EA4AF3D286FDCE500FD7952 /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
 		1ED4295B2627DA7200B0D686 /* LXQTableViewAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewAutoViewController.h; sourceTree = "<group>"; };
 		1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQTableViewAutoViewController.m; sourceTree = "<group>"; };
 		1ED429642627DAC100B0D686 /* LXQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewCell.h; sourceTree = "<group>"; };
@@ -203,6 +206,7 @@
 				1E65A9C6286B019900FB3076 /* MultiThread */,
 				1E65A9C2286AE31400FB3076 /* Memory */,
 				1E65A9B828669EB900FB3076 /* KVC&KVO */,
+				1EA4AF3B286FDCC400FD7952 /* Block */,
 				1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */,
 				1E763F502564BBD40081DF11 /* Assets.xcassets */,
 				1E763F522564BBD40081DF11 /* LaunchScreen.storyboard */,
@@ -228,6 +232,15 @@
 				1E763F6D2564BBD40081DF11 /* Info.plist */,
 			);
 			path = PointsDemoUITests;
+			sourceTree = "<group>";
+		};
+		1EA4AF3B286FDCC400FD7952 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				1EA4AF3C286FDCE500FD7952 /* BlockViewController.h */,
+				1EA4AF3D286FDCE500FD7952 /* BlockViewController.m */,
+			);
+			path = Block;
 			sourceTree = "<group>";
 		};
 		1ED4295A2627D7C500B0D686 /* TableViewAutoHeight */ = {
@@ -424,6 +437,7 @@
 				1E65A9C1286959E000FB3076 /* BaseTestModel.m in Sources */,
 				1E65A9C5286AE36A00FB3076 /* MemoryAreaViewController.m in Sources */,
 				1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */,
+				1EA4AF3E286FDCE500FD7952 /* BlockViewController.m in Sources */,
 				1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */,
 				1E1821332629D2FD009517FC /* MemoryIssuesViewController.m in Sources */,
 				1E65A9BB2866A18A00FB3076 /* KVCViewController.m in Sources */,
