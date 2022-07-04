@@ -17,7 +17,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     //需要测试哪个就填哪个VC
-    Class class = NSClassFromString(@"BlockViewController");
+    Class class = NSClassFromString(@"MemoryIssuesViewController");
     id vc = [[class alloc] init];
     UINavigationController *navCtr = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController =navCtr;
