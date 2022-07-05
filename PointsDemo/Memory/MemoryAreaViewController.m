@@ -48,4 +48,8 @@
     NSLog(@"obj的内存地址：%p", obj1);//堆区
     NSLog(@"&obj的内存地址：%p", &obj1);//栈区
 }
+
+- (void)didMoveToParentViewController:(UIViewController *)parent {
+    NSLog(@"%p", self);
+}
 @end

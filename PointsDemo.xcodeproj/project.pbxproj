@@ -26,6 +26,7 @@
 		1E825CA4286569F200B07D89 /* MethodSwizzlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */; };
 		1E94A721259B3BED0078B8C7 /* ClassLoadOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */; };
 		1EA4AF3E286FDCE500FD7952 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4AF3D286FDCE500FD7952 /* BlockViewController.m */; };
+		1EBA06EA28745947008C0134 /* TimerRetainCycleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBA06E928745947008C0134 /* TimerRetainCycleViewController.m */; };
 		1ED4295D2627DA7200B0D686 /* LXQTableViewAutoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */; };
 		1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED429652627DAC100B0D686 /* LXQTableViewCell.m */; };
 		1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */; };
@@ -88,6 +89,8 @@
 		1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodSwizzlingViewController.m; sourceTree = "<group>"; };
 		1EA4AF3C286FDCE500FD7952 /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
 		1EA4AF3D286FDCE500FD7952 /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
+		1EBA06E828745947008C0134 /* TimerRetainCycleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerRetainCycleViewController.h; sourceTree = "<group>"; };
+		1EBA06E928745947008C0134 /* TimerRetainCycleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerRetainCycleViewController.m; sourceTree = "<group>"; };
 		1ED4295B2627DA7200B0D686 /* LXQTableViewAutoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewAutoViewController.h; sourceTree = "<group>"; };
 		1ED4295C2627DA7200B0D686 /* LXQTableViewAutoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQTableViewAutoViewController.m; sourceTree = "<group>"; };
 		1ED429642627DAC100B0D686 /* LXQTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXQTableViewCell.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				1E1821322629D2FD009517FC /* MemoryIssuesViewController.m */,
 				1E65A9C3286AE36A00FB3076 /* MemoryAreaViewController.h */,
 				1E65A9C4286AE36A00FB3076 /* MemoryAreaViewController.m */,
+				1EBA06E828745947008C0134 /* TimerRetainCycleViewController.h */,
+				1EBA06E928745947008C0134 /* TimerRetainCycleViewController.m */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -435,6 +440,7 @@
 				1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */,
 				1E763F462564BBD10081DF11 /* AppDelegate.m in Sources */,
 				1E65A9C1286959E000FB3076 /* BaseTestModel.m in Sources */,
+				1EBA06EA28745947008C0134 /* TimerRetainCycleViewController.m in Sources */,
 				1E65A9C5286AE36A00FB3076 /* MemoryAreaViewController.m in Sources */,
 				1E43F781260449EE00B86FFE /* ResponseChainViewController.m in Sources */,
 				1EA4AF3E286FDCE500FD7952 /* BlockViewController.m in Sources */,
@@ -614,6 +620,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DP923K294H;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 armv7 x86_64 i386";
 				INFOPLIST_FILE = PointsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -636,6 +643,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = PointsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

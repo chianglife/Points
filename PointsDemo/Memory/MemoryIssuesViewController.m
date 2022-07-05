@@ -6,6 +6,8 @@
 //
 
 #import "MemoryIssuesViewController.h"
+#import "TimerRetainCycleViewController.h"
+
 #define KLog(_c) NSLog(@"%@ -- %p -- %@",_c,_c,[_c class]);
 
 @interface MemoryIssuesViewController ()
@@ -20,17 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self testTagedPointer];
-    [self test_NSString];
+//    [self test_NSString];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"启动定时器" style:UIBarButtonItemStylePlain target:self action:@selector(begin)];
-    
-    //NStimer引起的循环应用问题
-    if (self.navigationController.childViewControllers.count > 1) {
-        self.navigationItem.rightBarButtonItem = nil;
-        
-        __weak typeof(self) weakSelf = self;
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:weakSelf selector:@selector(timerAction) userInfo:nil repeats:YES];
-    }
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"计时器循环引用" style:UIBarButtonItemStylePlain target:self action:@selector(begin)];
 }
 
 /*  当name是简单字符串（123）的时候，类型是NSTaggedPointerString，存储在常量区。因为name在alloc分配时在堆区，由于较小，所以经过xcode中iOS的优化，成了NSTaggedPointerString类型，存储在常量区
@@ -104,17 +98,11 @@
 }
 
 - (void)begin {
-    MemoryIssuesViewController *vc = [[MemoryIssuesViewController alloc] init];
+    TimerRetainCycleViewController *vc = [[TimerRetainCycleViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)timerAction {
     NSLog(@"tiktok");
 }
-
-- (void)dealloc {
-    [self.timer invalidate];
-    self.timer = nil;
-}
-
 @end
