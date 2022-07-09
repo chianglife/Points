@@ -23,6 +23,8 @@
     [super viewDidLoad];
 //    [self testTagedPointer];
 //    [self test_NSString];
+//    [self test_alloc_retainCount];
+    [self test_weak_retainCount];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"计时器循环引用" style:UIBarButtonItemStylePlain target:self action:@selector(begin)];
 }
@@ -104,5 +106,23 @@
 
 - (void)timerAction {
     NSLog(@"tiktok");
+}
+
+/*
+ alloc创建的对象实际的引用计数为0，其引用计数打印结果为1，是因为在底层rootRetainCount方法中，引用计数默认+1了，但是这里只有对引用计数的读取操作，是没有写入操作的，
+ 简单来说就是：为了防止alloc创建的对象被释放（引用计数为0会被释放），所以在编译阶段，程序底层默认进行了+1操作。实际上在extra_rc中的引用计数仍然为0
+ */
+- (void)test_alloc_retainCount {
+    NSObject *objc = [NSObject alloc];
+    NSObject *objc1 = [objc init];
+    NSObject *objc2 = [objc init];
+    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)objc));
+}
+
+- (void)test_weak_retainCount {
+    NSObject *objc = [[NSObject alloc] init];
+    __weak typeof (id) weakObjc = objc;
+//    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)objc));
+    NSLog(@"%ld",CFGetRetainCount((__bridge CFTypeRef)weakObjc));
 }
 @end

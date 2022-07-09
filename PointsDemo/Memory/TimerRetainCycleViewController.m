@@ -11,6 +11,7 @@
 @interface TimerRetainCycleViewController ()
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, strong) TestTimer *test_timer;
+@property (nonatomic, strong) NSObject *obj;
 
 @end
 
@@ -25,7 +26,6 @@
 //    [self test_timerBlock];
 //    [self test_timer_3];
     [self test_timer_4];
-
 }
 
 - (void)test_timer1 {
