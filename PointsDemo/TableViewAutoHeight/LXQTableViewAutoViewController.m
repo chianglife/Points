@@ -39,6 +39,8 @@
         LXQLIstModel *model = [[LXQLIstModel alloc] init];
         NSInteger index = arc4random()%str.length > 0 ? arc4random()%str.length : 10;
         model.content = [str substringToIndex:index];
+        model.bottomSpace = 15;
+        model.isHidden = (i%2==0);
         [_dataArray addObject:model];
     }
 }
@@ -64,8 +66,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    LXQLIstModel * model = _dataArray[indexPath.row];
-    return model.cell_height?:UITableViewAutomaticDimension;
+//    LXQLIstModel * model = _dataArray[indexPath.row];
+//    return model.cell_height?:UITableViewAutomaticDimension;
+    return UITableViewAutomaticDimension;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -75,17 +78,20 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    LXQLIstModel *model = _dataArray[indexPath.row];
-    if (model.cell_height == 0) {
-        CGFloat height = cell.frame.size.height;
-        model.cell_height = height;
-    }
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    LXQLIstModel *model = _dataArray[indexPath.row];
+//    if (model.cell_height == 0) {
+//        CGFloat height = cell.frame.size.height;
+//        model.cell_height = height;
+//    }
+//}
 
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LXQLIstModel *model = _dataArray[indexPath.row];
+//    model.bottomSpace += 15;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
 - (UITableView *)tableView {

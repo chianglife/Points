@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXQLIstModel : NSObject
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, assign) CGFloat cell_height;
+@property (nonatomic, assign) CGFloat bottomSpace;
+@property (nonatomic, assign) BOOL isHidden;
 
 @end
 

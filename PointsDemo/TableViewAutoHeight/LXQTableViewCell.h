@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LXQTableViewCell : UITableViewCell
 @property (nonatomic, strong) LXQLIstModel *listModel;
 @property (nonatomic, strong) UILabel *contentLabel;
+@property (nonatomic, strong) UIButton *changeButton;
+@property (nonatomic, strong) UILabel *hidenLabel;
 
 @end
 
