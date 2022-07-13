@@ -89,7 +89,7 @@
 #pragma mark - UITableViewDelegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    LXQLIstModel *model = _dataArray[indexPath.row];
+//    LXQLIstModel *model = _dataArray[indexPath.row];
 //    model.bottomSpace += 15;
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }

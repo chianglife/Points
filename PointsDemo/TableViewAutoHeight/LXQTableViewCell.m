@@ -32,8 +32,10 @@
     
     [self.contentView addSubview:self.hidenLabel];
     [self.hidenLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(100, 30));
-        make.left.equalTo(self.contentView.mas_left).offset(15);
+        //同时设置了左右，宽度，这时候就会约束冲突, 这个时候可以使用优先级来选择想要的约束
+        make.size.mas_equalTo(CGSizeMake([[UIScreen mainScreen] bounds].size.width - 30, 50)).priorityLow();
+        make.left.equalTo(self.contentView.mas_left).offset(50).priorityHigh();
+        make.right.equalTo(self.contentView.mas_right).offset(-15);
         make.top.equalTo(self.changeButton.mas_bottom).offset(15);
     }];
     

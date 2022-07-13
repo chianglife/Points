@@ -31,6 +31,7 @@
 		1ED429662627DAC100B0D686 /* LXQTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED429652627DAC100B0D686 /* LXQTableViewCell.m */; };
 		1ED4296C2627DAFB00B0D686 /* LXQLIstModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */; };
 		1EDECA33286C4D8100B69C1C /* VariousThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDECA32286C4D8100B69C1C /* VariousThreadViewController.m */; };
+		1EF714C1287EEDEA00D7F193 /* LittleTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EF714C0287EEDEA00D7F193 /* LittleTestViewController.m */; };
 		7F5A071C8DCCBAF6E8F007FB /* libPods-PointsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A67D26F7EF8D37857937E1 /* libPods-PointsDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,8 @@
 		1ED4296B2627DAFB00B0D686 /* LXQLIstModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXQLIstModel.m; sourceTree = "<group>"; };
 		1EDECA31286C4D8100B69C1C /* VariousThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VariousThreadViewController.h; sourceTree = "<group>"; };
 		1EDECA32286C4D8100B69C1C /* VariousThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VariousThreadViewController.m; sourceTree = "<group>"; };
+		1EF714BF287EEDEA00D7F193 /* LittleTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LittleTestViewController.h; sourceTree = "<group>"; };
+		1EF714C0287EEDEA00D7F193 /* LittleTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LittleTestViewController.m; sourceTree = "<group>"; };
 		1EFE5825256E42A500B2E4B2 /* ClassLoadOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassLoadOrder.h; sourceTree = "<group>"; };
 		1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassLoadOrder.m; sourceTree = "<group>"; };
 		848646FAE6DAE5533B4E6336 /* Pods-PointsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PointsDemo.debug.xcconfig"; path = "Target Support Files/Pods-PointsDemo/Pods-PointsDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				1EFE5826256E42A500B2E4B2 /* ClassLoadOrder.m */,
 				1E825CA2286569F200B07D89 /* MethodSwizzlingViewController.h */,
 				1E825CA3286569F200B07D89 /* MethodSwizzlingViewController.m */,
+				1EF714BF287EEDEA00D7F193 /* LittleTestViewController.h */,
+				1EF714C0287EEDEA00D7F193 /* LittleTestViewController.m */,
 				1E65A9C6286B019900FB3076 /* MultiThread */,
 				1E65A9C2286AE31400FB3076 /* Memory */,
 				1E65A9B828669EB900FB3076 /* KVC&KVO */,
@@ -432,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF714C1287EEDEA00D7F193 /* LittleTestViewController.m in Sources */,
 				1E1C96D62616FD6C005FBD42 /* MultiThreadViewController.m in Sources */,
 				1E825CA4286569F200B07D89 /* MethodSwizzlingViewController.m in Sources */,
 				1EDECA33286C4D8100B69C1C /* VariousThreadViewController.m in Sources */,
